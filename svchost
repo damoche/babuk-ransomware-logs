@@ -1,0 +1,80 @@
+{
+  "_index": "wazuh-archives-4.x-2022.10.18",
+  "_type": "_doc",
+  "_id": "C7TA6oMBQfNr7Jgd3Muf",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "agent": {
+      "ip": "192.168.94.140",
+      "name": "WindowsAgent",
+      "id": "002"
+    },
+    "manager": {
+      "name": "wazuh.manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "sourceThreadId": "1840",
+          "grantedAccess": "0x1478",
+          "targetProcessGUID": "{72bcaa84-875b-634e-b209-000000001500}",
+          "targetProcessId": "7572",
+          "utcTime": "2022-10-18 11:00:44.183",
+          "sourceUser": "NT AUTHORITY\\\\SYSTEM",
+          "sourceProcessId": "1752",
+          "sourceImage": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+          "targetImage": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe",
+          "sourceProcessGUID": "{72bcaa84-4a99-6343-2a00-000000001500}",
+          "callTrace": "C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+9d4c4|c:\\\\windows\\\\system32\\\\themeservice.dll+1bdb|c:\\\\windows\\\\system32\\\\themeservice.dll+1836|c:\\\\windows\\\\system32\\\\themeservice.dll+65ac|c:\\\\windows\\\\system32\\\\themeservice.dll+b9d8|c:\\\\windows\\\\system32\\\\themeservice.dll+a846|C:\\\\Windows\\\\System32\\\\svchost.exe+4340|C:\\\\Windows\\\\System32\\\\sechost.dll+df78|C:\\\\Windows\\\\System32\\\\KERNEL32.DLL+17034|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+526a1",
+          "targetUser": "WINDOWSAGENT\\\\Administrator"
+        },
+        "system": {
+          "eventID": "10",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process accessed:\r\nRuleName: -\r\nUtcTime: 2022-10-18 11:00:44.183\r\nSourceProcessGUID: {72bcaa84-4a99-6343-2a00-000000001500}\r\nSourceProcessId: 1752\r\nSourceThreadId: 1840\r\nSourceImage: C:\\Windows\\System32\\svchost.exe\r\nTargetProcessGUID: {72bcaa84-875b-634e-b209-000000001500}\r\nTargetProcessId: 7572\r\nTargetImage: C:\\Users\\Administrator\\Desktop\\babuk\\e_win.exe\r\nGrantedAccess: 0x1478\r\nCallTrace: C:\\Windows\\SYSTEM32\\ntdll.dll+9d4c4|c:\\windows\\system32\\themeservice.dll+1bdb|c:\\windows\\system32\\themeservice.dll+1836|c:\\windows\\system32\\themeservice.dll+65ac|c:\\windows\\system32\\themeservice.dll+b9d8|c:\\windows\\system32\\themeservice.dll+a846|C:\\Windows\\System32\\svchost.exe+4340|C:\\Windows\\System32\\sechost.dll+df78|C:\\Windows\\System32\\KERNEL32.DLL+17034|C:\\Windows\\SYSTEM32\\ntdll.dll+526a1\r\nSourceUser: NT AUTHORITY\\SYSTEM\r\nTargetUser: WINDOWSAGENT\\Administrator\"",
+          "version": "3",
+          "systemTime": "2022-10-18T11:00:44.2000115Z",
+          "eventRecordID": "404557",
+          "threadID": "4988",
+          "computer": "WindowsAgent",
+          "task": "10",
+          "processID": "3096",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Sysmon\",\"providerGuid\":\"{5770385f-c22a-43e0-bf4c-06f5698ffbd9}\",\"eventID\":\"10\",\"version\":\"3\",\"level\":\"4\",\"task\":\"10\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2022-10-18T11:00:44.2000115Z\",\"eventRecordID\":\"404557\",\"processID\":\"3096\",\"threadID\":\"4988\",\"channel\":\"Microsoft-Windows-Sysmon/Operational\",\"computer\":\"WindowsAgent\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Process accessed:\\r\\nRuleName: -\\r\\nUtcTime: 2022-10-18 11:00:44.183\\r\\nSourceProcessGUID: {72bcaa84-4a99-6343-2a00-000000001500}\\r\\nSourceProcessId: 1752\\r\\nSourceThreadId: 1840\\r\\nSourceImage: C:\\\\Windows\\\\System32\\\\svchost.exe\\r\\nTargetProcessGUID: {72bcaa84-875b-634e-b209-000000001500}\\r\\nTargetProcessId: 7572\\r\\nTargetImage: C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe\\r\\nGrantedAccess: 0x1478\\r\\nCallTrace: C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+9d4c4|c:\\\\windows\\\\system32\\\\themeservice.dll+1bdb|c:\\\\windows\\\\system32\\\\themeservice.dll+1836|c:\\\\windows\\\\system32\\\\themeservice.dll+65ac|c:\\\\windows\\\\system32\\\\themeservice.dll+b9d8|c:\\\\windows\\\\system32\\\\themeservice.dll+a846|C:\\\\Windows\\\\System32\\\\svchost.exe+4340|C:\\\\Windows\\\\System32\\\\sechost.dll+df78|C:\\\\Windows\\\\System32\\\\KERNEL32.DLL+17034|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+526a1\\r\\nSourceUser: NT AUTHORITY\\\\SYSTEM\\r\\nTargetUser: WINDOWSAGENT\\\\Administrator\\\"\"},\"eventdata\":{\"utcTime\":\"2022-10-18 11:00:44.183\",\"sourceProcessGUID\":\"{72bcaa84-4a99-6343-2a00-000000001500}\",\"sourceProcessId\":\"1752\",\"sourceThreadId\":\"1840\",\"sourceImage\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"targetProcessGUID\":\"{72bcaa84-875b-634e-b209-000000001500}\",\"targetProcessId\":\"7572\",\"targetImage\":\"C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Desktop\\\\\\\\babuk\\\\\\\\e_win.exe\",\"grantedAccess\":\"0x1478\",\"callTrace\":\"C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+9d4c4|c:\\\\\\\\windows\\\\\\\\system32\\\\\\\\themeservice.dll+1bdb|c:\\\\\\\\windows\\\\\\\\system32\\\\\\\\themeservice.dll+1836|c:\\\\\\\\windows\\\\\\\\system32\\\\\\\\themeservice.dll+65ac|c:\\\\\\\\windows\\\\\\\\system32\\\\\\\\themeservice.dll+b9d8|c:\\\\\\\\windows\\\\\\\\system32\\\\\\\\themeservice.dll+a846|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe+4340|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\sechost.dll+df78|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\KERNEL32.DLL+17034|C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+526a1\",\"sourceUser\":\"NT AUTHORITY\\\\\\\\SYSTEM\",\"targetUser\":\"WINDOWSAGENT\\\\\\\\Administrator\"}}}",
+    "input": {
+      "type": "log"
+    },
+    "@timestamp": "2022-10-18T11:00:48.699Z",
+    "location": "EventChannel",
+    "id": "1666090848.3615702",
+    "timestamp": "2022-10-18T04:00:48.699-0700"
+  },
+  "fields": {
+    "@timestamp": [
+      "2022-10-18T11:00:48.699Z"
+    ],
+    "timestamp": [
+      "2022-10-18T11:00:48.699Z"
+    ]
+  },
+  "highlight": {
+    "agent.name": [
+      "@opensearch-dashboards-highlighted-field@WindowsAgent@/opensearch-dashboards-highlighted-field@"
+    ]
+  },
+  "sort": [
+    1666090848699
+  ]
+}
