@@ -1,0 +1,88 @@
+{
+  "_index": "wazuh-alerts-4.x-2022.10.18",
+  "_type": "_doc",
+  "_id": "N7TA6oMBQfNr7Jgd5Mtq",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.94.140",
+      "name": "WindowsAgent",
+      "id": "002"
+    },
+    "manager": {
+      "name": "wazuh.manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "image": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe",
+          "targetObject": "HKLM\\\\SYSTEM\\\\MountedDevices\\\\\\\\DosDevices\\\\M:",
+          "processGuid": "{72bcaa84-875b-634e-b209-000000001500}",
+          "processId": "7572",
+          "utcTime": "2022-10-18 11:00:45.199",
+          "details": "Binary Data",
+          "eventType": "SetValue",
+          "user": "WINDOWSAGENT\\\\Administrator"
+        },
+        "system": {
+          "eventID": "13",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2022-10-18 11:00:45.199\r\nProcessGuid: {72bcaa84-875b-634e-b209-000000001500}\r\nProcessId: 7572\r\nImage: C:\\Users\\Administrator\\Desktop\\babuk\\e_win.exe\r\nTargetObject: HKLM\\SYSTEM\\MountedDevices\\\\DosDevices\\M:\r\nDetails: Binary Data\r\nUser: WINDOWSAGENT\\Administrator\"",
+          "version": "2",
+          "systemTime": "2022-10-18T11:00:45.2387372Z",
+          "eventRecordID": "404564",
+          "threadID": "4988",
+          "computer": "WindowsAgent",
+          "task": "13",
+          "processID": "3096",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": true,
+      "level": 15,
+      "description": "Potentially malicious executable C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe mounted a drive. Possible Babuk ransomware launched.",
+      "groups": [
+        "babuk_ransomware"
+      ],
+      "mitre": {
+        "technique": [
+          "System Information Discovery"
+        ],
+        "id": [
+          "T1082"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      },
+      "id": "100115"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1666090850.3632595",
+    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Sysmon\",\"providerGuid\":\"{5770385f-c22a-43e0-bf4c-06f5698ffbd9}\",\"eventID\":\"13\",\"version\":\"2\",\"level\":\"4\",\"task\":\"13\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2022-10-18T11:00:45.2387372Z\",\"eventRecordID\":\"404564\",\"processID\":\"3096\",\"threadID\":\"4988\",\"channel\":\"Microsoft-Windows-Sysmon/Operational\",\"computer\":\"WindowsAgent\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Registry value set:\\r\\nRuleName: -\\r\\nEventType: SetValue\\r\\nUtcTime: 2022-10-18 11:00:45.199\\r\\nProcessGuid: {72bcaa84-875b-634e-b209-000000001500}\\r\\nProcessId: 7572\\r\\nImage: C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe\\r\\nTargetObject: HKLM\\\\SYSTEM\\\\MountedDevices\\\\\\\\DosDevices\\\\M:\\r\\nDetails: Binary Data\\r\\nUser: WINDOWSAGENT\\\\Administrator\\\"\"},\"eventdata\":{\"eventType\":\"SetValue\",\"utcTime\":\"2022-10-18 11:00:45.199\",\"processGuid\":\"{72bcaa84-875b-634e-b209-000000001500}\",\"processId\":\"7572\",\"image\":\"C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Desktop\\\\\\\\babuk\\\\\\\\e_win.exe\",\"targetObject\":\"HKLM\\\\\\\\SYSTEM\\\\\\\\MountedDevices\\\\\\\\\\\\\\\\DosDevices\\\\\\\\M:\",\"details\":\"Binary Data\",\"user\":\"WINDOWSAGENT\\\\\\\\Administrator\"}}}",
+    "timestamp": "2022-10-18T04:00:50.745-0700"
+  },
+  "fields": {
+    "timestamp": [
+      "2022-10-18T11:00:50.745Z"
+    ]
+  },
+  "sort": [
+    1666090850745
+  ]
+}
