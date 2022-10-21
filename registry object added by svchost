@@ -1,0 +1,76 @@
+{
+  "_index": "wazuh-archives-4.x-2022.10.18",
+  "_type": "_doc",
+  "_id": "GrTA6oMBQfNr7Jgd3Muf",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "agent": {
+      "ip": "192.168.94.140",
+      "name": "WindowsAgent",
+      "id": "002"
+    },
+    "manager": {
+      "name": "wazuh.manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "image": "C:\\\\Windows\\\\system32\\\\svchost.exe",
+          "targetObject": "HKLM\\\\System\\\\CurrentControlSet\\\\Control\\\\SecurityProviders\\\\SCHANNEL",
+          "processGuid": "{72bcaa84-875b-634e-b309-000000001500}",
+          "processId": "7092",
+          "utcTime": "2022-10-18 11:00:44.449",
+          "ruleName": "technique_id=T1003,technique_name=Credential Dumping",
+          "eventType": "CreateKey",
+          "user": "NT AUTHORITY\\\\SYSTEM"
+        },
+        "system": {
+          "eventID": "12",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Registry object added or deleted:\r\nRuleName: technique_id=T1003,technique_name=Credential Dumping\r\nEventType: CreateKey\r\nUtcTime: 2022-10-18 11:00:44.449\r\nProcessGuid: {72bcaa84-875b-634e-b309-000000001500}\r\nProcessId: 7092\r\nImage: C:\\Windows\\system32\\svchost.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\r\nUser: NT AUTHORITY\\SYSTEM\"",
+          "version": "2",
+          "systemTime": "2022-10-18T11:00:44.4533554Z",
+          "eventRecordID": "404559",
+          "threadID": "4988",
+          "computer": "WindowsAgent",
+          "task": "12",
+          "processID": "3096",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Sysmon\",\"providerGuid\":\"{5770385f-c22a-43e0-bf4c-06f5698ffbd9}\",\"eventID\":\"12\",\"version\":\"2\",\"level\":\"4\",\"task\":\"12\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2022-10-18T11:00:44.4533554Z\",\"eventRecordID\":\"404559\",\"processID\":\"3096\",\"threadID\":\"4988\",\"channel\":\"Microsoft-Windows-Sysmon/Operational\",\"computer\":\"WindowsAgent\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Registry object added or deleted:\\r\\nRuleName: technique_id=T1003,technique_name=Credential Dumping\\r\\nEventType: CreateKey\\r\\nUtcTime: 2022-10-18 11:00:44.449\\r\\nProcessGuid: {72bcaa84-875b-634e-b309-000000001500}\\r\\nProcessId: 7092\\r\\nImage: C:\\\\Windows\\\\system32\\\\svchost.exe\\r\\nTargetObject: HKLM\\\\System\\\\CurrentControlSet\\\\Control\\\\SecurityProviders\\\\SCHANNEL\\r\\nUser: NT AUTHORITY\\\\SYSTEM\\\"\"},\"eventdata\":{\"ruleName\":\"technique_id=T1003,technique_name=Credential Dumping\",\"eventType\":\"CreateKey\",\"utcTime\":\"2022-10-18 11:00:44.449\",\"processGuid\":\"{72bcaa84-875b-634e-b309-000000001500}\",\"processId\":\"7092\",\"image\":\"C:\\\\\\\\Windows\\\\\\\\system32\\\\\\\\svchost.exe\",\"targetObject\":\"HKLM\\\\\\\\System\\\\\\\\CurrentControlSet\\\\\\\\Control\\\\\\\\SecurityProviders\\\\\\\\SCHANNEL\",\"user\":\"NT AUTHORITY\\\\\\\\SYSTEM\"}}}",
+    "input": {
+      "type": "log"
+    },
+    "@timestamp": "2022-10-18T11:00:48.856Z",
+    "location": "EventChannel",
+    "id": "1666090848.3615702",
+    "timestamp": "2022-10-18T04:00:48.856-0700"
+  },
+  "fields": {
+    "@timestamp": [
+      "2022-10-18T11:00:48.856Z"
+    ],
+    "timestamp": [
+      "2022-10-18T11:00:48.856Z"
+    ]
+  },
+  "highlight": {
+    "agent.name": [
+      "@opensearch-dashboards-highlighted-field@WindowsAgent@/opensearch-dashboards-highlighted-field@"
+    ]
+  },
+  "sort": [
+    1666090848856
+  ]
+}
