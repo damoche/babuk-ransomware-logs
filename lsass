@@ -1,0 +1,92 @@
+{
+  "_index": "wazuh-alerts-4.x-2022.10.18",
+  "_type": "_doc",
+  "_id": "NbTA6oMBQfNr7Jgd5Mtq",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.94.140",
+      "name": "WindowsAgent",
+      "id": "002"
+    },
+    "manager": {
+      "name": "wazuh.manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "sourceThreadId": "3496",
+          "grantedAccess": "0x1478",
+          "targetProcessGUID": "{72bcaa84-875b-634e-b209-000000001500}",
+          "targetProcessId": "7572",
+          "utcTime": "2022-10-18 11:00:44.449",
+          "sourceUser": "NT AUTHORITY\\\\SYSTEM",
+          "sourceProcessId": "664",
+          "sourceImage": "C:\\\\Windows\\\\system32\\\\lsass.exe",
+          "targetImage": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe",
+          "sourceProcessGUID": "{72bcaa84-4a94-6343-0c00-000000001500}",
+          "callTrace": "C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+9d4c4|C:\\\\Windows\\\\system32\\\\lsasrv.dll+abf2|C:\\\\Windows\\\\system32\\\\lsasrv.dll+b010|C:\\\\Windows\\\\system32\\\\lsasrv.dll+b3db|C:\\\\Windows\\\\SYSTEM32\\\\SspiSrv.dll+1a82|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+796e3|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+1cae8|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+5ef3a|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+5a278|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+3a416|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+39d68|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+4887f|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+47c88|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+47271|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+46cde|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+4b3b2|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+20330|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+52f76|C:\\\\Windows\\\\System32\\\\KERNEL32.DLL+17034|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+526a1",
+          "targetUser": "WINDOWSAGENT\\\\Administrator"
+        },
+        "system": {
+          "eventID": "10",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process accessed:\r\nRuleName: -\r\nUtcTime: 2022-10-18 11:00:44.449\r\nSourceProcessGUID: {72bcaa84-4a94-6343-0c00-000000001500}\r\nSourceProcessId: 664\r\nSourceThreadId: 3496\r\nSourceImage: C:\\Windows\\system32\\lsass.exe\r\nTargetProcessGUID: {72bcaa84-875b-634e-b209-000000001500}\r\nTargetProcessId: 7572\r\nTargetImage: C:\\Users\\Administrator\\Desktop\\babuk\\e_win.exe\r\nGrantedAccess: 0x1478\r\nCallTrace: C:\\Windows\\SYSTEM32\\ntdll.dll+9d4c4|C:\\Windows\\system32\\lsasrv.dll+abf2|C:\\Windows\\system32\\lsasrv.dll+b010|C:\\Windows\\system32\\lsasrv.dll+b3db|C:\\Windows\\SYSTEM32\\SspiSrv.dll+1a82|C:\\Windows\\System32\\RPCRT4.dll+796e3|C:\\Windows\\System32\\RPCRT4.dll+1cae8|C:\\Windows\\System32\\RPCRT4.dll+5ef3a|C:\\Windows\\System32\\RPCRT4.dll+5a278|C:\\Windows\\System32\\RPCRT4.dll+3a416|C:\\Windows\\System32\\RPCRT4.dll+39d68|C:\\Windows\\System32\\RPCRT4.dll+4887f|C:\\Windows\\System32\\RPCRT4.dll+47c88|C:\\Windows\\System32\\RPCRT4.dll+47271|C:\\Windows\\System32\\RPCRT4.dll+46cde|C:\\Windows\\System32\\RPCRT4.dll+4b3b2|C:\\Windows\\SYSTEM32\\ntdll.dll+20330|C:\\Windows\\SYSTEM32\\ntdll.dll+52f76|C:\\Windows\\System32\\KERNEL32.DLL+17034|C:\\Windows\\SYSTEM32\\ntdll.dll+526a1\r\nSourceUser: NT AUTHORITY\\SYSTEM\r\nTargetUser: WINDOWSAGENT\\Administrator\"",
+          "version": "3",
+          "systemTime": "2022-10-18T11:00:44.4623856Z",
+          "eventRecordID": "404561",
+          "threadID": "4988",
+          "computer": "WindowsAgent",
+          "task": "10",
+          "processID": "3096",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": true,
+      "level": 15,
+      "description": "OS credential dumping detected on WindowsAgent. Possible ransomware activity.",
+      "groups": [
+        "babuk_ransomware"
+      ],
+      "mitre": {
+        "technique": [
+          "System Information Discovery"
+        ],
+        "id": [
+          "T1082"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      },
+      "id": "100113"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1666090850.3619701",
+    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Sysmon\",\"providerGuid\":\"{5770385f-c22a-43e0-bf4c-06f5698ffbd9}\",\"eventID\":\"10\",\"version\":\"3\",\"level\":\"4\",\"task\":\"10\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2022-10-18T11:00:44.4623856Z\",\"eventRecordID\":\"404561\",\"processID\":\"3096\",\"threadID\":\"4988\",\"channel\":\"Microsoft-Windows-Sysmon/Operational\",\"computer\":\"WindowsAgent\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Process accessed:\\r\\nRuleName: -\\r\\nUtcTime: 2022-10-18 11:00:44.449\\r\\nSourceProcessGUID: {72bcaa84-4a94-6343-0c00-000000001500}\\r\\nSourceProcessId: 664\\r\\nSourceThreadId: 3496\\r\\nSourceImage: C:\\\\Windows\\\\system32\\\\lsass.exe\\r\\nTargetProcessGUID: {72bcaa84-875b-634e-b209-000000001500}\\r\\nTargetProcessId: 7572\\r\\nTargetImage: C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe\\r\\nGrantedAccess: 0x1478\\r\\nCallTrace: C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+9d4c4|C:\\\\Windows\\\\system32\\\\lsasrv.dll+abf2|C:\\\\Windows\\\\system32\\\\lsasrv.dll+b010|C:\\\\Windows\\\\system32\\\\lsasrv.dll+b3db|C:\\\\Windows\\\\SYSTEM32\\\\SspiSrv.dll+1a82|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+796e3|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+1cae8|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+5ef3a|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+5a278|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+3a416|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+39d68|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+4887f|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+47c88|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+47271|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+46cde|C:\\\\Windows\\\\System32\\\\RPCRT4.dll+4b3b2|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+20330|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+52f76|C:\\\\Windows\\\\System32\\\\KERNEL32.DLL+17034|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+526a1\\r\\nSourceUser: NT AUTHORITY\\\\SYSTEM\\r\\nTargetUser: WINDOWSAGENT\\\\Administrator\\\"\"},\"eventdata\":{\"utcTime\":\"2022-10-18 11:00:44.449\",\"sourceProcessGUID\":\"{72bcaa84-4a94-6343-0c00-000000001500}\",\"sourceProcessId\":\"664\",\"sourceThreadId\":\"3496\",\"sourceImage\":\"C:\\\\\\\\Windows\\\\\\\\system32\\\\\\\\lsass.exe\",\"targetProcessGUID\":\"{72bcaa84-875b-634e-b209-000000001500}\",\"targetProcessId\":\"7572\",\"targetImage\":\"C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Desktop\\\\\\\\babuk\\\\\\\\e_win.exe\",\"grantedAccess\":\"0x1478\",\"callTrace\":\"C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+9d4c4|C:\\\\\\\\Windows\\\\\\\\system32\\\\\\\\lsasrv.dll+abf2|C:\\\\\\\\Windows\\\\\\\\system32\\\\\\\\lsasrv.dll+b010|C:\\\\\\\\Windows\\\\\\\\system32\\\\\\\\lsasrv.dll+b3db|C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\SspiSrv.dll+1a82|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+796e3|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+1cae8|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+5ef3a|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+5a278|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+3a416|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+39d68|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+4887f|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+47c88|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+47271|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+46cde|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RPCRT4.dll+4b3b2|C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+20330|C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+52f76|C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\KERNEL32.DLL+17034|C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+526a1\",\"sourceUser\":\"NT AUTHORITY\\\\\\\\SYSTEM\",\"targetUser\":\"WINDOWSAGENT\\\\\\\\Administrator\"}}}",
+    "timestamp": "2022-10-18T04:00:50.353-0700"
+  },
+  "fields": {
+    "timestamp": [
+      "2022-10-18T11:00:50.353Z"
+    ]
+  },
+  "sort": [
+    1666090850353
+  ]
+}
