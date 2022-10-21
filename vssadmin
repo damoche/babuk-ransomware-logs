@@ -1,0 +1,106 @@
+{
+  "_index": "wazuh-alerts-4.x-2022.10.18",
+  "_type": "_doc",
+  "_id": "NrTA6oMBQfNr7Jgd5Mtq",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.94.140",
+      "name": "WindowsAgent",
+      "id": "002"
+    },
+    "manager": {
+      "name": "wazuh.manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "Cmd.Exe",
+          "image": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{72bcaa84-875b-634e-b209-000000001500}",
+          "description": "Windows Command Processor",
+          "logonGuid": "{72bcaa84-4aa4-6343-fbd6-030000000000}",
+          "parentCommandLine": "\\\"C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe\\\"",
+          "processGuid": "{72bcaa84-875c-634e-b409-000000001500}",
+          "logonId": "0x3d6fb",
+          "parentProcessId": "7572",
+          "processId": "5208",
+          "currentDirectory": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\",
+          "utcTime": "2022-10-18 11:00:44.649",
+          "hashes": "SHA1=F1EFB0FDDC156E4C61C5F78A54700E4E7984D55D,MD5=8A2122E8162DBEF04694B9C3E0B6CDEE,SHA256=B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450,IMPHASH=272245E2988E1E430500B852C4FB5E18",
+          "parentImage": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe",
+          "ruleName": "technique_id=T1059,technique_name=Command-Line Interface",
+          "company": "Microsoft Corporation",
+          "commandLine": "\\\"C:\\\\Windows\\\\System32\\\\cmd.exe\\\" /c vssadmin.exe delete shadows /all /quiet",
+          "integrityLevel": "High",
+          "fileVersion": "10.0.19041.746 (WinBuild.160101.0800)",
+          "user": "WINDOWSAGENT\\\\Administrator",
+          "terminalSessionId": "1",
+          "parentUser": "WINDOWSAGENT\\\\Administrator"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: technique_id=T1059,technique_name=Command-Line Interface\r\nUtcTime: 2022-10-18 11:00:44.649\r\nProcessGuid: {72bcaa84-875c-634e-b409-000000001500}\r\nProcessId: 5208\r\nImage: C:\\Windows\\System32\\cmd.exe\r\nFileVersion: 10.0.19041.746 (WinBuild.160101.0800)\r\nDescription: Windows Command Processor\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: Cmd.Exe\r\nCommandLine: \"C:\\Windows\\System32\\cmd.exe\" /c vssadmin.exe delete shadows /all /quiet\r\nCurrentDirectory: C:\\Users\\Administrator\\Desktop\\babuk\\\r\nUser: WINDOWSAGENT\\Administrator\r\nLogonGuid: {72bcaa84-4aa4-6343-fbd6-030000000000}\r\nLogonId: 0x3D6FB\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: SHA1=F1EFB0FDDC156E4C61C5F78A54700E4E7984D55D,MD5=8A2122E8162DBEF04694B9C3E0B6CDEE,SHA256=B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450,IMPHASH=272245E2988E1E430500B852C4FB5E18\r\nParentProcessGuid: {72bcaa84-875b-634e-b209-000000001500}\r\nParentProcessId: 7572\r\nParentImage: C:\\Users\\Administrator\\Desktop\\babuk\\e_win.exe\r\nParentCommandLine: \"C:\\Users\\Administrator\\Desktop\\babuk\\e_win.exe\" \r\nParentUser: WINDOWSAGENT\\Administrator\"",
+          "version": "5",
+          "systemTime": "2022-10-18T11:00:44.6815065Z",
+          "eventRecordID": "404562",
+          "threadID": "4988",
+          "computer": "WindowsAgent",
+          "task": "1",
+          "processID": "3096",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": true,
+      "level": 15,
+      "description": "Volume shadow copy deleted. Possible ransomware activity.",
+      "groups": [
+        "babuk_ransomware"
+      ],
+      "mitre": {
+        "technique": [
+          "Inhibit System Recovery",
+          "Windows Command Shell"
+        ],
+        "id": [
+          "T1490",
+          "T1059.003"
+        ],
+        "tactic": [
+          "Impact",
+          "Execution"
+        ]
+      },
+      "id": "100114"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1666090850.3626211",
+    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Sysmon\",\"providerGuid\":\"{5770385f-c22a-43e0-bf4c-06f5698ffbd9}\",\"eventID\":\"1\",\"version\":\"5\",\"level\":\"4\",\"task\":\"1\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2022-10-18T11:00:44.6815065Z\",\"eventRecordID\":\"404562\",\"processID\":\"3096\",\"threadID\":\"4988\",\"channel\":\"Microsoft-Windows-Sysmon/Operational\",\"computer\":\"WindowsAgent\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Process Create:\\r\\nRuleName: technique_id=T1059,technique_name=Command-Line Interface\\r\\nUtcTime: 2022-10-18 11:00:44.649\\r\\nProcessGuid: {72bcaa84-875c-634e-b409-000000001500}\\r\\nProcessId: 5208\\r\\nImage: C:\\\\Windows\\\\System32\\\\cmd.exe\\r\\nFileVersion: 10.0.19041.746 (WinBuild.160101.0800)\\r\\nDescription: Windows Command Processor\\r\\nProduct: Microsoft® Windows® Operating System\\r\\nCompany: Microsoft Corporation\\r\\nOriginalFileName: Cmd.Exe\\r\\nCommandLine: \\\"C:\\\\Windows\\\\System32\\\\cmd.exe\\\" /c vssadmin.exe delete shadows /all /quiet\\r\\nCurrentDirectory: C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\\\r\\nUser: WINDOWSAGENT\\\\Administrator\\r\\nLogonGuid: {72bcaa84-4aa4-6343-fbd6-030000000000}\\r\\nLogonId: 0x3D6FB\\r\\nTerminalSessionId: 1\\r\\nIntegrityLevel: High\\r\\nHashes: SHA1=F1EFB0FDDC156E4C61C5F78A54700E4E7984D55D,MD5=8A2122E8162DBEF04694B9C3E0B6CDEE,SHA256=B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450,IMPHASH=272245E2988E1E430500B852C4FB5E18\\r\\nParentProcessGuid: {72bcaa84-875b-634e-b209-000000001500}\\r\\nParentProcessId: 7572\\r\\nParentImage: C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe\\r\\nParentCommandLine: \\\"C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe\\\" \\r\\nParentUser: WINDOWSAGENT\\\\Administrator\\\"\"},\"eventdata\":{\"ruleName\":\"technique_id=T1059,technique_name=Command-Line Interface\",\"utcTime\":\"2022-10-18 11:00:44.649\",\"processGuid\":\"{72bcaa84-875c-634e-b409-000000001500}\",\"processId\":\"5208\",\"image\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\cmd.exe\",\"fileVersion\":\"10.0.19041.746 (WinBuild.160101.0800)\",\"description\":\"Windows Command Processor\",\"product\":\"Microsoft® Windows® Operating System\",\"company\":\"Microsoft Corporation\",\"originalFileName\":\"Cmd.Exe\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\cmd.exe\\\\\\\" /c vssadmin.exe delete shadows /all /quiet\",\"currentDirectory\":\"C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Desktop\\\\\\\\babuk\\\\\\\\\",\"user\":\"WINDOWSAGENT\\\\\\\\Administrator\",\"logonGuid\":\"{72bcaa84-4aa4-6343-fbd6-030000000000}\",\"logonId\":\"0x3d6fb\",\"terminalSessionId\":\"1\",\"integrityLevel\":\"High\",\"hashes\":\"SHA1=F1EFB0FDDC156E4C61C5F78A54700E4E7984D55D,MD5=8A2122E8162DBEF04694B9C3E0B6CDEE,SHA256=B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450,IMPHASH=272245E2988E1E430500B852C4FB5E18\",\"parentProcessGuid\":\"{72bcaa84-875b-634e-b209-000000001500}\",\"parentProcessId\":\"7572\",\"parentImage\":\"C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Desktop\\\\\\\\babuk\\\\\\\\e_win.exe\",\"parentCommandLine\":\"\\\\\\\"C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Desktop\\\\\\\\babuk\\\\\\\\e_win.exe\\\\\\\"\",\"parentUser\":\"WINDOWSAGENT\\\\\\\\Administrator\"}}}",
+    "timestamp": "2022-10-18T04:00:50.439-0700"
+  },
+  "fields": {
+    "timestamp": [
+      "2022-10-18T11:00:50.439Z"
+    ]
+  },
+  "sort": [
+    1666090850439
+  ]
+}
