@@ -1,0 +1,93 @@
+{
+  "_index": "wazuh-alerts-4.x-2022.10.18",
+  "_type": "_doc",
+  "_id": "NLTA6oMBQfNr7Jgd5Mtq",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.94.140",
+      "name": "WindowsAgent",
+      "id": "002"
+    },
+    "manager": {
+      "name": "wazuh.manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "sourceThreadId": "624",
+          "grantedAccess": "0x1fffff",
+          "targetProcessGUID": "{72bcaa84-875b-634e-b209-000000001500}",
+          "targetProcessId": "7572",
+          "utcTime": "2022-10-18 11:00:43.870",
+          "sourceUser": "NT AUTHORITY\\\\SYSTEM",
+          "sourceProcessId": "504",
+          "sourceImage": "C:\\\\Windows\\\\system32\\\\csrss.exe",
+          "targetImage": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe",
+          "sourceProcessGUID": "{72bcaa84-4a93-6343-0800-000000001500}",
+          "callTrace": "C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+9d4c4|C:\\\\Windows\\\\system32\\\\basesrv.DLL+326f|C:\\\\Windows\\\\SYSTEM32\\\\CSRSRV.dll+6490|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+526af",
+          "targetUser": "WINDOWSAGENT\\\\Administrator"
+        },
+        "system": {
+          "eventID": "10",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process accessed:\r\nRuleName: -\r\nUtcTime: 2022-10-18 11:00:43.870\r\nSourceProcessGUID: {72bcaa84-4a93-6343-0800-000000001500}\r\nSourceProcessId: 504\r\nSourceThreadId: 624\r\nSourceImage: C:\\Windows\\system32\\csrss.exe\r\nTargetProcessGUID: {72bcaa84-875b-634e-b209-000000001500}\r\nTargetProcessId: 7572\r\nTargetImage: C:\\Users\\Administrator\\Desktop\\babuk\\e_win.exe\r\nGrantedAccess: 0x1FFFFF\r\nCallTrace: C:\\Windows\\SYSTEM32\\ntdll.dll+9d4c4|C:\\Windows\\system32\\basesrv.DLL+326f|C:\\Windows\\SYSTEM32\\CSRSRV.dll+6490|C:\\Windows\\SYSTEM32\\ntdll.dll+526af\r\nSourceUser: NT AUTHORITY\\SYSTEM\r\nTargetUser: WINDOWSAGENT\\Administrator\"",
+          "version": "3",
+          "systemTime": "2022-10-18T11:00:43.8965792Z",
+          "eventRecordID": "404555",
+          "threadID": "4988",
+          "computer": "WindowsAgent",
+          "task": "10",
+          "processID": "3096",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": true,
+      "level": 15,
+      "description": "Potentially malicious executable C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exeaccessed C:\\\\Windows\\\\system32\\\\csrss.exe. Possible Babuk ransomware launched.",
+      "groups": [
+        "babuk_ransomware"
+      ],
+      "mitre": {
+        "technique": [
+          "Portable Executable Injection"
+        ],
+        "id": [
+          "T1055.002"
+        ],
+        "tactic": [
+          "Defense Evasion",
+          "Privilege Escalation"
+        ]
+      },
+      "id": "100112"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1666090845.3615702",
+    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Sysmon\",\"providerGuid\":\"{5770385f-c22a-43e0-bf4c-06f5698ffbd9}\",\"eventID\":\"10\",\"version\":\"3\",\"level\":\"4\",\"task\":\"10\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2022-10-18T11:00:43.8965792Z\",\"eventRecordID\":\"404555\",\"processID\":\"3096\",\"threadID\":\"4988\",\"channel\":\"Microsoft-Windows-Sysmon/Operational\",\"computer\":\"WindowsAgent\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Process accessed:\\r\\nRuleName: -\\r\\nUtcTime: 2022-10-18 11:00:43.870\\r\\nSourceProcessGUID: {72bcaa84-4a93-6343-0800-000000001500}\\r\\nSourceProcessId: 504\\r\\nSourceThreadId: 624\\r\\nSourceImage: C:\\\\Windows\\\\system32\\\\csrss.exe\\r\\nTargetProcessGUID: {72bcaa84-875b-634e-b209-000000001500}\\r\\nTargetProcessId: 7572\\r\\nTargetImage: C:\\\\Users\\\\Administrator\\\\Desktop\\\\babuk\\\\e_win.exe\\r\\nGrantedAccess: 0x1FFFFF\\r\\nCallTrace: C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+9d4c4|C:\\\\Windows\\\\system32\\\\basesrv.DLL+326f|C:\\\\Windows\\\\SYSTEM32\\\\CSRSRV.dll+6490|C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+526af\\r\\nSourceUser: NT AUTHORITY\\\\SYSTEM\\r\\nTargetUser: WINDOWSAGENT\\\\Administrator\\\"\"},\"eventdata\":{\"utcTime\":\"2022-10-18 11:00:43.870\",\"sourceProcessGUID\":\"{72bcaa84-4a93-6343-0800-000000001500}\",\"sourceProcessId\":\"504\",\"sourceThreadId\":\"624\",\"sourceImage\":\"C:\\\\\\\\Windows\\\\\\\\system32\\\\\\\\csrss.exe\",\"targetProcessGUID\":\"{72bcaa84-875b-634e-b209-000000001500}\",\"targetProcessId\":\"7572\",\"targetImage\":\"C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Desktop\\\\\\\\babuk\\\\\\\\e_win.exe\",\"grantedAccess\":\"0x1fffff\",\"callTrace\":\"C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+9d4c4|C:\\\\\\\\Windows\\\\\\\\system32\\\\\\\\basesrv.DLL+326f|C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\CSRSRV.dll+6490|C:\\\\\\\\Windows\\\\\\\\SYSTEM32\\\\\\\\ntdll.dll+526af\",\"sourceUser\":\"NT AUTHORITY\\\\\\\\SYSTEM\",\"targetUser\":\"WINDOWSAGENT\\\\\\\\Administrator\"}}}",
+    "timestamp": "2022-10-18T04:00:45.671-0700"
+  },
+  "fields": {
+    "timestamp": [
+      "2022-10-18T11:00:45.671Z"
+    ]
+  },
+  "sort": [
+    1666090845671
+  ]
+}
